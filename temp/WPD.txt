@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Environmental Awareness Project</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url("https://images.unsplash.com/photo-1508780709619-79562169bc64");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Dark Overlay */
+        body::before {
+            content: "";
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: black;
+            text-align: center;
+        }
+
+        header, nav, section, article, aside, footer, div {
+            background-color: rgba(255,255,255,0.95);
+            margin: 20px;
+            padding: 20px;
+            border: 3px solid darkgreen;
+            border-radius: 10px;
+        }
+
+        p {
+            border: 2px dashed green;
+            padding: 10px;
+        }
+
+        ul {
+            border: 2px solid orange;
+            padding: 10px;
+        }
+
+        ol {
+            border: 2px solid blue;
+            padding: 10px;
+        }
+
+        table {
+            border: 5px solid black;
+            width: 80%;
+            margin: auto;
+            background-color: white;
+        }
+
+        th, td {
+            border: 2px solid green;
+            padding: 10px;
+            text-align: center;
+        }
+
+        a:link { color: blue; }
+        a:visited { color: purple; }
+        a:hover { color: red; }
+
+        img {
+            border: 5px solid darkgreen;
+            display: block;
+            margin: 10px auto;
+        }
+
+        nav a {
+            margin: 10px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Environmental Awareness & Sustainability Initiative 2026</h1>
+    <h3>College Project Submission</h3>
+    <h4>Vivekanand Education Society Polytechnic</h4>
+    <h5>Developed By</h5>
+    <h6>Santusht Suryawanshi | Akshara Patil | Harshit Jurani</h6>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#climate">Climate Change</a>
+    <a href="#pollution">Pollution</a>
+    <a href="#wildlife">Wildlife</a>
+    <a href="#water">Water</a>
+    <a href="#trees">Trees</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="home">
+    <h2>About This Project</h2>
+    <p>
+        Environmental awareness means understanding the importance of protecting
+        our natural resources and maintaining ecological balance.
+        Rapid industrialization, deforestation, and urbanization have increased
+        environmental problems worldwide. This project focuses on major
+        environmental challenges and their practical solutions.
+    </p>
+</section>
+
+<article id="climate">
+    <h2>1. Climate Change</h2>
+    <p>
+        Climate change refers to long-term changes in temperature and weather patterns.
+        It is mainly caused by greenhouse gases such as carbon dioxide (CO₂) and methane.
+        Burning fossil fuels, deforestation, and industrial activities increase global warming.
+    </p>
+    <p>
+        Effects include rising sea levels, melting glaciers, extreme weather events,
+        and disruption of ecosystems.
+    </p>
+    <ul>
+        <li>Switch to renewable energy sources like solar and wind</li>
+        <li>Reduce use of fossil fuels</li>
+        <li>Promote energy-efficient appliances</li>
+        <li>Encourage public transportation and cycling</li>
+    </ul>
+    <a href="https://www.climate.gov/" target="_blank">
+        <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9" height="200" alt="Climate Change">
+    </a>
+</article>
+
+<article id="pollution">
+    <h2>2. Pollution Control</h2>
+    <p>
+        Pollution occurs when harmful substances contaminate the environment.
+        Air pollution is caused by vehicle emissions and industries.
+        Water pollution happens due to sewage and chemical waste.
+        Soil pollution is caused by pesticides and plastic waste.
+    </p>
+    <ol>
+        <li>Reduce plastic consumption</li>
+        <li>Recycle and reuse materials</li>
+        <li>Control industrial waste disposal</li>
+        <li>Adopt eco-friendly products</li>
+    </ol>
+    <a href="https://www.populationfoundation.in/" target="_blank">
+        <img src="https://blog.ipleaders.in/wp-content/uploads/2021/04/pollution-bad_fbd596fd1a506e77.jpg" height="200" alt="Pollution Control">
+    </a>
+</article>
+
+<article id="wildlife">
+    <h2>3. Wildlife Protection</h2>
+    <p>
+        Wildlife plays a crucial role in maintaining biodiversity and ecological balance.
+        Deforestation and illegal poaching threaten many species with extinction.
+        Protecting wildlife ensures stable ecosystems and natural food chains.
+    </p>
+    <ul>
+        <li>Prevent illegal hunting and poaching</li>
+        <li>Establish wildlife sanctuaries</li>
+        <li>Promote forest conservation</li>
+        <li>Create awareness about endangered species</li>
+    </ul>
+    <a href="https://www.worldwildlife.org/" target="_blank">
+        <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131" height="200" alt="Wildlife">
+    </a>
+</article>
+
+<article id="water">
+    <h2>4. Water Conservation</h2>
+    <p>
+        Freshwater is essential for human survival, agriculture, and industry.
+        Overuse and pollution of water resources are causing severe shortages.
+        Conserving water ensures availability for future generations.
+    </p>
+    <ul>
+        <li>Fix leaking taps and pipelines</li>
+        <li>Practice rainwater harvesting</li>
+        <li>Avoid water wastage in daily activities</li>
+        <li>Reuse wastewater for gardening</li>
+    </ul>
+    <a href="https://www.unesco.org/en/water-security" target="_blank">
+        <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231" height="200" alt="Water Conservation">
+    </a>
+</article>
+
+<article id="trees">
+    <h2>5. Tree Plantation</h2>
+    <p>
+        Trees absorb carbon dioxide and release oxygen, helping reduce global warming.
+        They prevent soil erosion, provide shelter to wildlife,
+        and improve air quality.
+    </p>
+    <ul>
+        <li>Organize tree plantation drives</li>
+        <li>Protect existing forests</li>
+        <li>Encourage community participation</li>
+        <li>Promote urban green spaces</li>
+    </ul>
+    <a href="https://www.arborday.org/" target="_blank">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" height="200" alt="Tree Plantation">
+    </a>
+</article>
+
+<section>
+    <h2>Environmental Issues Overview</h2>
+    <table border="5" cellpadding="10" cellspacing="5">
+        <tr>
+            <th>Issue</th>
+            <th>Main Cause</th>
+            <th>Solution</th>
+        </tr>
+        <tr>
+            <td>Air Pollution</td>
+            <td>Vehicle & Industrial Emissions</td>
+            <td>Clean Energy & Public Transport</td>
+        </tr>
+        <tr>
+            <td>Water Pollution</td>
+            <td>Industrial Waste</td>
+            <td>Wastewater Treatment</td>
+        </tr>
+    </table>
+</section>
+
+<section id="contact">
+    <h2>Contact Information</h2>
+    <p>For further details regarding this college project:</p>
+    <p>
+        📧 Email:
+        <a href="mailto:co2025.santusht.suryawanshi@ves.ac.in">
+            co2025.santusht.suryawanshi@ves.ac.in
+        </a>
+    </p>
+    <p>
+        📞 Phone:
+        <a href="tel:6350133887">6350133887</a>
+    </p>
+</section>
+
+<footer>
+    <p>© 2026 Environmental Awareness Project</p>
+    <p>Vivekanand Education Society Polytechnic</p>
+    <p>Developed by Santusht Suryawanshi, Akshara Patil, Harshit Jurani</p>
+</footer>
+
+</body>
+</html>
