@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environmental Awareness Project | VESP 2026</title>
+
+    <style>
+        /* General Page Setup */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url("https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&q=80&w=2000");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #333;
+        }
+
+        /* Layout Containers */
+        header, nav, section, article, footer {
+            background-color: rgba(255, 255, 255, 0.98);
+            margin: 20px auto;
+            max-width: 950px;
+            padding: 30px;
+            border-left: 10px solid #2d6a4f;
+            border-radius: 12px;
+            box-shadow: 0px 10px 30px rgba(0,0,0,0.5);
+        }
+
+        h1, h2, h3 { color: #1b4332; text-align: center; }
+
+        /* Navigation Bar */
+        nav {
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-left: none;
+            border-bottom: 4px solid #2d6a4f;
+            padding: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #1b4332;
+            font-weight: bold;
+            padding: 10px 20px;
+            display: inline-block;
+            transition: 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #2d6a4f;
+            color: white;
+            border-radius: 8px;
+        }
+
+        /* Image Styling */
+        .img-box {
+            text-align: center;
+            margin: 20px 0;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .img-box img {
+            width: 100%;
+            max-height: 450px; 
+            object-fit: cover;
+            border: 5px solid #fff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: 0.5s transform ease;
+            display: block;
+            cursor: pointer;
+        }
+
+        .img-box img:hover { transform: scale(1.02); }
+
+        .caption {
+            background: #f1f8e9;
+            padding: 10px;
+            font-size: 0.9em;
+            color: #2d6a4f;
+            border-radius: 0 0 10px 10px;
+            border-bottom: 2px solid #2d6a4f;
+            font-style: italic;
+        }
+
+        /* Text Styling */
+        p {
+            line-height: 1.8;
+            font-size: 1.05em;
+            text-align: justify;
+            color: #444;
+        }
+
+        /* Stats Section */
+        #stats {
+            background: linear-gradient(135deg, #e8f5e9 0%, #ffffff 100%);
+            border-left: 10px solid #1b4332;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .info-card {
+            background: #ffffff;
+            border: 1px solid #c8e6c9;
+            border-top: 5px solid #1b4332;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+
+        .info-card h3 { margin-top: 0; color: #000000; font-size: 1.2em; }
+        .info-card .stat-value { font-size: 2.2em; font-weight: bold; color: #000000; margin: 10px 0; }
+        .info-card p { color: #000000; text-align: center; }
+
+        /* Feedback Form Styling */
+        #feedback-container {
+            text-align: center;
+            padding: 40px;
+        }
+
+        /* Toggle Button for Form */
+        .toggle-form-btn {
+            background-color: #1b4332;
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .toggle-form-btn:hover {
+            background-color: #2d6a4f;
+            transform: scale(1.05);
+        }
+
+        /* Hidden by default */
+        #actual-form {
+            display: none;
+            margin-top: 30px;
+            text-align: left;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .feedback-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-group { display: flex; flex-direction: column; }
+        .form-group label { margin-bottom: 5px; font-weight: bold; color: #1b4332; }
+        .form-group input, .form-group textarea, .form-group select {
+            padding: 12px;
+            border: 1px solid #c8e6c9;
+            border-radius: 6px;
+            font-family: inherit;
+        }
+
+        .submit-btn {
+            background-color: #2d6a4f;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover { background-color: #1b4332; }
+
+        /* Table Styling */
+        .tech-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #c8e6c9;
+        }
+
+        .tech-table th { background: #1b4332; color: white; padding: 15px; }
+        .tech-table td { padding: 15px; border-bottom: 1px solid #eee; text-align: center; color: #000000; font-weight: 500; }
+        .status-badge { color: white; background: #2d6a4f; padding: 5px 12px; border-radius: 20px; font-size: 0.85em; }
+
+        /* Footer */
+        footer { text-align: center; background: #1b4332; color: white; border-left: none; }
+        footer a { color: #95d5b2; text-decoration: none; }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Environmental Awareness & Sustainability</h1>
+    <h3 style="color: #444;">Diploma Project Submission 2026</h3>
+    <p style="text-align: center;">
+        <b>Vivekanand Education Society Polytechnic (VESP)</b><br>
+        Developed by: Santusht Suryawanshi | Akshara Patil | Harshit Jurani
+    </p>
+</header>
+
+<nav>
+    <a href="#climate">Climate</a>
+    <a href="#pollution">Pollution</a>
+    <a href="#nature">Nature</a>
+    <a href="#stats">Dashboard</a>
+    <a href="#feedback-container">Feedback</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<article id="climate">
+    <h2>1. The Global Climate Crisis</h2>
+    <div class="img-box">
+        <a href="https://climate.nasa.gov/" target="_blank">
+            <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&q=80&w=1000" alt="Climate Change Effects">
+        </a>
+        <div class="caption">Click to view NASA's Global Climate Research</div>
+    </div>
+    
+    
+
+[Image of the greenhouse effect]
+
+
+    <p>
+        Climate change is one of the most significant challenges facing humanity in 2026. It is primarily driven by the "Greenhouse Effect," where gases like Carbon Dioxide, Methane, and Nitrous Oxide trap heat in the Earth's atmosphere. These emissions result from burning fossil fuels for electricity, industrial manufacturing, and transportation. As global temperatures rise, we observe the rapid melting of polar ice caps, which leads to rising sea levels and threatens coastal cities. Additionally, climate change causes extreme weather patterns, including severe droughts and unseasonal floods, disrupting agriculture and food security. To combat this, we must transition to renewable energy sources such as solar, wind, and hydroelectric power. Reducing our carbon footprint through energy efficiency and supporting global climate policies is essential for the survival of future generations.
+    </p>
+</article>
+
+<article id="pollution">
+    <h2>2. Environmental Pollution & Waste Management</h2>
+    <div class="img-box">
+        <a href="https://www.nationalgeographic.com/environment/topic/pollution" target="_blank">
+            <img src="https://images.unsplash.com/photo-1621451537084-482c73073a0f?auto=format&fit=crop&q=80&w=1000" alt="Pollution Impact">
+        </a>
+        <div class="caption">Click to explore National Geographic's Pollution Studies</div>
+    </div>
+    <p>
+        Pollution remains a critical threat to public health and biodiversity, manifesting in air, water, and soil contamination. Air pollution, caused by vehicle exhausts and industrial smoke, contributes to respiratory diseases and acid rain. Water pollution is equally devastating, as untreated industrial chemicals and domestic sewage flow into our rivers and oceans, killing aquatic life and contaminating drinking water. A major modern concern is plastic pollution; millions of tons of single-use plastics end up in landfills and oceans every year, taking centuries to decompose. Furthermore, for engineering students, E-waste (electronic waste) is a growing concern, as discarded gadgets leak toxic heavy metals like lead and mercury into the soil. Effective waste management requires a shift toward a circular economy, focusing on the 5 R’s: Refuse, Reduce, Reuse, Repurpose, and Recycle.
+    </p>
+</article>
+
+<article id="nature">
+    <h2>3. Biodiversity and Reforestation</h2>
+    <div class="img-box">
+        <a href="https://www.worldwildlife.org/" target="_blank">
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=1000" alt="Lush Forest">
+        </a>
+        <div class="caption">Click to learn about WWF Conservation Projects</div>
+    </div>
+    <p>
+        Biodiversity is the variety of life on Earth, and it provides the essential services that sustain human existence, such as pollination, water purification, and climate regulation. Unfortunately, deforestation for urban expansion and agriculture has led to the loss of millions of hectares of forest, pushing many species toward extinction. Trees act as natural carbon sinks, absorbing CO2 and releasing oxygen, making reforestation one of our most effective tools against global warming. Beyond carbon sequestration, forests prevent soil erosion and maintain the natural water cycle by encouraging rainfall. Protecting wildlife habitats is not just about saving animals; it is about maintaining a balanced ecosystem where every species plays a role in the food chain. Community-led plantation drives and strict laws against illegal logging are necessary to restore the green cover of our planet and ensure ecological stability.
+    </p>
+</article>
+
+<section id="stats">
+    <h2 style="color: #000000;">Sustainability Dashboard</h2>
+    <div class="dashboard-grid">
+        <div class="info-card">
+            <h3>Carbon Reduction Target</h3>
+            <div class="stat-value">30%</div>
+            <p>Projected reduction via renewable energy transition.</p>
+        </div>
+        <div class="info-card">
+            <h3>Plastic Waste Diverted</h3>
+            <div class="stat-value">55k Tons</div>
+            <p>Annual waste successfully recycled globally.</p>
+        </div>
+        <div class="info-card">
+            <h3>Forest Restoration</h3>
+            <div class="stat-value">12M</div>
+            <p>New trees planted in urban reforestation drives.</p>
+        </div>
+    </div>
+
+    <table class="tech-table">
+        <thead>
+            <tr>
+                <th>Focus Area</th>
+                <th>Actionable Solution</th>
+                <th>Global Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Energy Consumption</td><td>Solar & Wind Grid Integration</td><td><span class="status-badge">Accelerating</span></td></tr>
+            <tr><td>Marine Life</td><td>Micro-plastic Filtering Technology</td><td><span class="status-badge">In Development</span></td></tr>
+            <tr><td>Resource Scarcity</td><td>Advanced Rainwater Harvesting</td><td><span class="status-badge">Standardizing</span></td></tr>
+        </tbody>
+    </table>
+</section>
+
+<section id="feedback-container">
+    <h2>Project Feedback</h2>
+    <p>Help us improve our sustainability research for VESP.</p>
+    
+    <button class="toggle-form-btn" onclick="toggleForm()">Give Feedback Now</button>
+
+    <div id="actual-form">
+        <form class="feedback-form">
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email ID:</label>
+                <input type="email" id="email" name="email" placeholder="Your VESP Email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="category">Which topic was most helpful?</label>
+                <select id="category" name="category">
+                    <option value="climate">Climate Crisis</option>
+                    <option value="pollution">Pollution & Waste</option>
+                    <option value="nature">Biodiversity</option>
+                    <option value="dashboard">Sustainability Dashboard</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="comments">Your Suggestions:</label>
+                <textarea id="comments" name="comments" rows="4" placeholder="How can we improve this awareness project?" required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Feedback</button>
+        </form>
+    </div>
+</section>
+
+<footer id="contact">
+    <p>© 2026 Environmental Awareness Initiative | Department of Computer Engineering | VESP</p>
+    <p>
+        Contact the Team: 
+        <a href="mailto:co2025.santusht.suryawanshi@ves.ac.in">Email Us</a> | 
+        Helpline: <a href="tel:6350133887">6350133887</a>
+    </p>
+</footer>
+
+<script>
+    function toggleForm() {
+        var formDiv = document.getElementById("actual-form");
+        var btn = document.querySelector(".toggle-form-btn");
+        
+        if (formDiv.style.display === "block") {
+            formDiv.style.display = "none";
+            btn.innerHTML = "Give Feedback Now";
+        } else {
+            formDiv.style.display = "block";
+            btn.innerHTML = "Hide Form";
+        }
+    }
+</script>
+
+</body>
+</html>
